@@ -1,0 +1,44 @@
+---
+title: "R Markdown Presentation & Plotly"
+author: "TSAI  YI- FAN"
+date: "2018/4/23/"
+output:
+  html_document:
+    keep_md: yes
+  pdf_document: default
+---
+
+Instructions
+=============
+These are the aspect that we will be covering with the presentation:
+This introduction in which we are dealing with rmarkdown
+1. A second one in which run R code inside the slide.
+2. And finally we will draw a chart with plotly.
+
+
+```{r echo = TRUE}
+ library(plotly)
+```
+
+Loading required package: ggplot2
+=====================
+Attaching package: ‘plotly’
+The following object is masked from ‘package:ggplot2’:
+last_plot
+The following object is masked from ‘package:stats’:
+filter
+x The following object is masked from ‘package:graphics’:
+layout
+
+```{r echo = TRUE}
+data(iris)
+head(iris)
+```
+
+```{r echo = TRUE}
+plot_ly(x= iris$Sepal.Width, y= iris$Sepal.Length, z = iris$Species, 
+type = "scatter3d", mode = "markers", color = iris$Species)
+```
+Warning in arrange_impl(.data, dots): ‘.Random.seed’ is not an integer
+vector but of type ‘NULL’, so ignored
+=================
